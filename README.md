@@ -1,6 +1,7 @@
 📌 Job & Internship Recommendation Platform (Java)
 
 📖 Project Overview
+
 This project is a Java-based platform designed to centralize, analyze, and recommend job and internship offers in Morocco.
 The application automatically collects job offers from multiple Moroccan recruitment websites, stores them in a database, and provides personalized recommendations based on the user’s profile and CV using Machine Learning.
 
