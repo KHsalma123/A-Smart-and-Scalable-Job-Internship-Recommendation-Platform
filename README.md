@@ -7,7 +7,9 @@ The application automatically collects job offers from multiple Moroccan recruit
 
 🌐 Scraped Job Sources
 The platform scrapes job offers from four Moroccan websites:
+
 Rekrute
+
 🔗 https://www.rekrute.com/
 Jobzyn
 🔗 https://www.jobzyn.com/fr/jobs/maroc
