@@ -142,28 +142,31 @@ Provide personalized job recommendations based on the user’s:
 ---
 
 ## 📊 UML Diagrams
-The system design diagrams are available via Google Drive:  
 
 ## 📊 UML Diagrams
 
 ### Class Diagram
+Shows the static structure of the application, including classes, attributes, methods, and relationships. It models entities like users, jobs, CVs, and services for authentication, scraping, and email notifications.
 <div align="center">
   <img src="https://drive.google.com/uc?export=view&id=1cbUsxxDlKq49Cf6Nyinh5XiqL334E45N" width="600"/>
 </div>
 
 ### Use Case Diagram
+Shows the interactions between the system and its actors (users and admin). It highlights the main functionalities such as account creation, login, job consultation, and admin scraping operations.
 <div align="center">
   <img src="https://drive.google.com/uc?export=view&id=1bh5dg6ka2SpeXZqVPlOLjXhYXerxwnpY" width="600"/>
 </div>
 
-### Activity Diagram
-<div align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1OhMNetxVF4QAJKAYLQF-VYXjB8F0aI_U" width="600"/>
-</div>
-
 ### Sequence Diagram
+Illustrates the order of message exchanges between system components over time. It helps understand how actions like login, password recovery, job consultation, and scraping are executed step by step.
 <div align="center">
   <img src="https://drive.google.com/uc?export=view&id=1wTy7S7IrPIT-KFgTumKFJZNUM5vYX2s1" width="600"/>
+</div>
+
+### Activity Diagram
+Represents the flow of actions and processes within the system. It visualizes workflows such as searching and filtering job offers, viewing details, and updating the database after scraping.
+<div align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1OhMNetxVF4QAJKAYLQF-VYXjB8F0aI_U" width="600"/>
 </div>
 
 
