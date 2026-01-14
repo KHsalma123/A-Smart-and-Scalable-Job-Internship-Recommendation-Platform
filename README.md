@@ -9,14 +9,17 @@ The application automatically collects job offers from multiple Moroccan recruit
 The platform scrapes job offers from four Moroccan websites:
 
 Rekrute
-
 🔗 https://www.rekrute.com/
+
 Jobzyn
 🔗 https://www.jobzyn.com/fr/jobs/maroc
+
 Emploi.ma
 🔗 https://www.emploi.ma/
+
 MarocAnnonces
 🔗 https://www.marocannonces.com/categorie/309/Emploi/Offres-emploi.html
+
 🔍 Scraping Strategy
 The scraping approach depends on the website and its content type. For Rekrute and Jobzyn, Selenium with ChromeDriver is used because these sites load content dynamically with JavaScript, including pagination. For Emploi.ma and MarocAnnonces, which have static HTML pages, Jsoup is used for faster and lighter HTML parsing. This way, each tool is chosen according to the website’s structure for efficient data extraction.
 
