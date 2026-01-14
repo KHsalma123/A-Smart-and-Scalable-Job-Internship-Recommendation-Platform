@@ -144,17 +144,28 @@ Provide personalized job recommendations based on the user’s:
 ## 📊 UML Diagrams
 The system design diagrams are available via Google Drive:  
 
+## 📊 UML Diagrams
+
 ### Class Diagram
-![Class Diagram](https://drive.google.com/uc?export=view&id=1cbUsxxDlKq49Cf6Nyinh5XiqL334E45N)
+<div align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1cbUsxxDlKq49Cf6Nyinh5XiqL334E45N" width="600"/>
+</div>
 
 ### Use Case Diagram
-![Use Case Diagram](https://drive.google.com/uc?export=view&id=1bh5dg6ka2SpeXZqVPlOLjXhYXerxwnpY)
+<div align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1bh5dg6ka2SpeXZqVPlOLjXhYXerxwnpY" width="600"/>
+</div>
 
 ### Activity Diagram
-![Activity Diagram](https://drive.google.com/uc?export=view&id=1OhMNetxVF4QAJKAYLQF-VYXjB8F0aI_U)
+<div align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1OhMNetxVF4QAJKAYLQF-VYXjB8F0aI_U" width="600"/>
+</div>
 
 ### Sequence Diagram
-![Sequence Diagram](https://drive.google.com/uc?export=view&id=1wTy7S7IrPIT-KFgTumKFJZNUM5vYX2s1)
+<div align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1wTy7S7IrPIT-KFgTumKFJZNUM5vYX2s1" width="600"/>
+</div>
+
 
 ---
 
