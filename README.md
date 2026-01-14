@@ -145,7 +145,7 @@ Provide personalized job recommendations based on the user’s:
 The system design diagrams are available via Google Drive:  
 
 ### Class Diagram
-![Class Diagram](https://drive.google.com/file/d/1cbUsxxDlKq49Cf6Nyinh5XiqL334E45N/view?usp=drive_link)
+![Class Diagram](https://drive.google.com/file/d/1cbUsxxDlKq49Cf6Nyinh5XiqL334E45N/view?usp=sharing)
 
 ### Use Case Diagram
 ![Use Case Diagram](https://drive.google.com/uc?export=view&id=ID_IMAGE_USECASE)
