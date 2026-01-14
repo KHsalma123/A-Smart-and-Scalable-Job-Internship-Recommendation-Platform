@@ -148,15 +148,13 @@ The system design diagrams are available via Google Drive:
 ![Class Diagram](https://drive.google.com/uc?export=view&id=1cbUsxxDlKq49Cf6Nyinh5XiqL334E45N)
 
 ### Use Case Diagram
-![Use Case Diagram](https://drive.google.com/uc?export=view&id=ID_IMAGE_USECASE)
+![Use Case Diagram](https://drive.google.com/uc?export=view&id=1bh5dg6ka2SpeXZqVPlOLjXhYXerxwnpY)
 
 ### Activity Diagram
-![Activity Diagram](https://drive.google.com/uc?export=view&id=ID_IMAGE_ACTIVITY)
+![Activity Diagram](https://drive.google.com/uc?export=view&id=1OhMNetxVF4QAJKAYLQF-VYXjB8F0aI_U)
 
 ### Sequence Diagram
-![Sequence Diagram](https://drive.google.com/uc?export=view&id=ID_IMAGE_SEQUENCE)
-
-> **Note:** Remplace `ID_IMAGE_CLASS`, `ID_IMAGE_USECASE`, etc. par les ID réels de tes images sur Google Drive.
+![Sequence Diagram](https://drive.google.com/uc?export=view&id=1wTy7S7IrPIT-KFgTumKFJZNUM5vYX2s1)
 
 ---
 
