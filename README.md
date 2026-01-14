@@ -5,6 +5,21 @@
 This project is a Java-based platform designed to centralize, analyze, and recommend job and internship offers in Morocco.
 The application automatically collects job offers from multiple Moroccan recruitment websites, stores them in a database, and provides personalized recommendations based on the user’s profile and CV using Machine Learning.
 
+## UML Diagrams
+
+### Class Diagram
+![Class Diagram](C:\Users\SALMA.KH\Desktop\projet_momen/diag_class.png)
+
+### Use Case Diagram
+![Use Case Diagram](docs/images/usecase_diagram.png)
+
+### Activity Diagram
+![Activity Diagram](docs/images/activity_diagram.png)
+
+### Sequence Diagram
+![Sequence Diagram](docs/images/sequence_diagram.png)
+
+
 🌐 Scraped Job Sources
 The platform scrapes job offers from four Moroccan websites:
 
