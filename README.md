@@ -1,183 +1,164 @@
-##📌 Job & Internship Recommendation Platform (Java)
+# 📌 Job & Internship Recommendation Platform (Java)
 
-📖 Project Overview
+## 📖 Project Overview
+This project is a **Java-based platform** designed to centralize, analyze, and recommend job and internship offers in Morocco.  
+The application automatically collects job offers from multiple Moroccan recruitment websites, stores them in a database, and provides personalized recommendations based on the user’s profile and CV using **Machine Learning**.
 
-This project is a Java-based platform designed to centralize, analyze, and recommend job and internship offers in Morocco.
-The application automatically collects job offers from multiple Moroccan recruitment websites, stores them in a database, and provides personalized recommendations based on the user’s profile and CV using Machine Learning.
+---
 
-🌐 Scraped Job Sources
+## 🌐 Scraped Job Sources
 The platform scrapes job offers from four Moroccan websites:
 
-Rekrute
-🔗 https://www.rekrute.com/
+- **Rekrute**  
+  🔗 [https://www.rekrute.com/](https://www.rekrute.com/)
 
-Jobzyn
-🔗 https://www.jobzyn.com/fr/jobs/maroc
+- **Jobzyn**  
+  🔗 [https://www.jobzyn.com/fr/jobs/maroc](https://www.jobzyn.com/fr/jobs/maroc)
 
-Emploi.ma
-🔗 https://www.emploi.ma/
+- **Emploi.ma**  
+  🔗 [https://www.emploi.ma/](https://www.emploi.ma/)
 
-MarocAnnonces
-🔗 https://www.marocannonces.com/categorie/309/Emploi/Offres-emploi.html
+- **MarocAnnonces**  
+  🔗 [https://www.marocannonces.com/categorie/309/Emploi/Offres-emploi.html](https://www.marocannonces.com/categorie/309/Emploi/Offres-emploi.html)
 
-🔍 Scraping Strategy
+---
 
-The scraping approach depends on the website and its content type. For Rekrute and Jobzyn, Selenium with ChromeDriver is used because these sites load content dynamically with JavaScript, including pagination. For Emploi.ma and MarocAnnonces, which have static HTML pages, Jsoup is used for faster and lighter HTML parsing. This way, each tool is chosen according to the website’s structure for efficient data extraction.
+## 🔍 Scraping Strategy
+The scraping approach depends on the website and its content type:  
 
-🛠 Technologies Used
-🔹 Backend & Core
+- **Rekrute** and **Jobzyn** → **Selenium + ChromeDriver** because these sites load content dynamically with JavaScript, including pagination.  
+- **Emploi.ma** and **MarocAnnonces** → **Jsoup** for faster and lighter HTML parsing since the content is static.  
 
-Java (JDK 21) – Main programming language
+This hybrid approach ensures **efficient and reliable data extraction**.
 
-Swing (Java GUI) – Desktop user interface
+---
 
-FlatLaf – Modern look and feel for Swing
+## 🛠 Technologies Used
 
-JDBC – Database communication
+### 🔹 Backend & Core
+- **Java (JDK 21)** – Main programming language  
+- **Swing (Java GUI)** – Desktop user interface  
+- **FlatLaf** – Modern look and feel for Swing  
+- **JDBC** – Database communication  
+- **Maven** – Dependency and project management  
 
-Maven – Dependency and project management
+### 🔹 Web Scraping
+- Selenium WebDriver  
+- ChromeDriver  
+- WebDriverManager  
+- Jsoup  
 
-🔹 Web Scraping
+### 🔹 Database
+- MySQL  
+- CVs stored as **BLOB**  
+- Job offers unified from multiple sources  
 
-Selenium WebDriver
+### 🔹 Machine Learning
+- Weka  
+- Binary Classification  
+- Random Forest algorithm  
 
-ChromeDriver
+### 🔹 CV Processing
+- Apache PDFBox – Extract text from CVs (PDF)  
 
-WebDriverManager
+### 🔹 Email Service
+- JavaMail API – Password recovery via email  
 
-Jsoup
+### 🔹 Visualization
+- JFreeChart – Admin statistics  
 
-🔹 Database
+### 🔹 Logging
+- Logback  
 
-MySQL
+---
 
-CVs stored as BLOB
+## 🗄 Database Integration
+A **MySQL database** is used to store:  
+- Users and profiles  
+- CVs (as BLOB)  
+- Job offers scraped from all sources  
 
-Job offers unified from multiple sources
+Offers from different websites are merged logically into a **unified dataset**.  
+Each user can consult all offers and access the **“Jobs for Me”** feature.  
 
-🔹 Machine Learning
+**Drive link for database and project files:**  
+🔗 [https://drive.google.com/drive/folders/1Y7SqeNgZDu-C-t1iQgQUD6_ElclkbEsf?usp=sharing](https://drive.google.com/drive/folders/1Y7SqeNgZDu-C-t1iQgQUD6_ElclkbEsf?usp=sharing)
 
-Weka
+---
 
-Binary Classification
+## 🤖 Machine Learning & Recommendation System
 
-Random Forest algorithm
+### 🔑 Objective
+Provide personalized job recommendations based on the user’s:  
+- Skills  
+- Profile  
+- Extracted CV content  
 
-🔹 CV Processing
+### ⚙ How It Works
+1. **Skill Extraction**  
+   Skills are extracted from:  
+   - User profile  
+   - Uploaded CV (PDF)  
+   - Job descriptions  
+   Implemented using `JobMatcher.extractSkills()`
 
-Apache PDFBox – Extract text from CVs (PDF)
+2. **Feature Vector Construction**  
+   Binary vectors represent:  
+   - User skills  
+   - Job skills  
+   Implemented using `JobMatcher.buildFeatureVector()`
 
-🔹 Email Service
+3. **Model**  
+   - Binary classification: Relevant (1) / Not relevant (0)  
+   - **Random Forest** (Weka)  
+   - Pre-trained model (`model.model`) using `dataset.arff`
 
-JavaMail API – Password recovery via email
+4. **Prediction**  
+   - Predicts probability of compatibility  
+   - Only offers with probability ≥ 0.35 are displayed
 
-🔹 Visualization
+### 🧠 Machine Learning Dataset
+- Training dataset: `dataset.arff`  
+- Represents users and job offers as binary feature vectors  
+- Used to train the Random Forest classifier in Weka
 
-JFreeChart – Admin statistics
+---
 
-🔹 Logging
+## 👤 User Features
+- Account creation & secure login  
+- Profile and CV management  
+- Job search and filtering  
+- Personalized recommendations (“Jobs for Me”)  
+- Direct redirection to external job offer links
 
-Logback
+---
 
-🗄 Database Integration
+## 👨‍💼 Admin Features
+- Secure admin login  
+- Launch scraping processes  
+- Update database with new offers  
+- View statistics and charts
 
-A MySQL database is used to store:
+---
 
-Users and profiles
+## 📊 UML Diagrams
+The system design diagrams are available via Google Drive:  
 
-CVs (as BLOB)
+### Class Diagram
+![Class Diagram](https://drive.google.com/uc?export=view&id=ID_IMAGE_CLASS)
 
-Job offers scraped from all sources
+### Use Case Diagram
+![Use Case Diagram](https://drive.google.com/uc?export=view&id=ID_IMAGE_USECASE)
 
-Offers from different websites are merged logically and treated as a unified dataset.
+### Activity Diagram
+![Activity Diagram](https://drive.google.com/uc?export=view&id=ID_IMAGE_ACTIVITY)
 
-Each user can consult all offers and access the “Jobs for Me” feature.
+### Sequence Diagram
+![Sequence Diagram](https://drive.google.com/uc?export=view&id=ID_IMAGE_SEQUENCE)
 
-lien drive: https://drive.google.com/drive/folders/1Y7SqeNgZDu-C-t1iQgQUD6_ElclkbEsf?usp=sharing
+> **Note:** Remplace `ID_IMAGE_CLASS`, `ID_IMAGE_USECASE`, etc. par les ID réels de tes images sur Google Drive.
 
-🤖 Machine Learning & Recommendation System
-🔑 Objective
+---
 
-Provide personalized job recommendations based on the user’s:
-
-Skills
-
-Profile
-
-Extracted CV content
-
-⚙ How It Works
-
-Skill Extraction
-
-Skills are extracted from:
-
-User profile
-
-Uploaded CV (PDF)
-
-Job descriptions
-
-Implemented using JobMatcher.extractSkills()
-
-Feature Vector Construction
-
-Binary vectors represent:
-
-User skills
-
-Job skills
-
-Implemented using JobMatcher.buildFeatureVector()
-
-Model
-
-Binary classification
-
-Relevant (1)
-
-Not relevant (0)
-
-Random Forest (Weka)
-
-Pre-trained model (model.model) using dataset.arff
-
-Prediction
-
-The model predicts the probability of compatibility
-
-Only offers with probability ≥ 0.35 are displayed
-
-🧠 Machine Learning Dataset
-
-Training dataset: dataset.arff
-
-Represents users and job offers as binary feature vectors
-
-Used to train the Random Forest classifier in Weka
-
-👤 User Features
-
-Account creation & secure login
-
-Profile and CV management
-
-Job search and filtering
-
-Personalized recommendations (“Jobs for Me”)
-
-Direct redirection to external job offer links
-
-👨‍💼 Admin Features
-
-Secure admin login
-
-Launch scraping processes
-
-Update database with new offers
-
-View statistics and charts
-
-🚀 Conclusion
-
-This project combines web scraping, database management, desktop UI, and machine learning to deliver a smart, scalable, and user-centered job recommendation system tailored to the Moroccan job market.
+## 🚀 Conclusion
+This project combines **web scraping, database management, desktop UI, and machine learning** to deliver a **smart, scalable, and user-centered job recommendation system** tailored to the Moroccan job market.
