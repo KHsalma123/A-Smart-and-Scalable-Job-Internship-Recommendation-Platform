@@ -13,7 +13,7 @@ public class Database {
     }
     
 
- // ---------------- JOB INSERTION ----------------
+  // ---------------- JOB INSERTION ----------------
     public static boolean insertJob(String titre, String lien, String entreprise, String lieu,
                                     String typeContrat, String experience) {
         String sql = "INSERT INTO jobzyn_offres " +
@@ -111,6 +111,36 @@ public class Database {
 
     // Utilisateur avec CV en BLOB
     public static void registerUser(String fullName, String email, String password, String city, String skills, byte[] cvBytes) {
+    	
+    	// 🔹 Validation email
+        if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+            JOptionPane.showMessageDialog(null, "Adresse e-mail invalide !");
+            return;
+        }
+
+        // 🔹 Validation mot de passe
+        if (!password.matches("^(?=.[A-Za-z])(?=.\\d)[A-Za-z\\d]{6,}$")) {
+            JOptionPane.showMessageDialog(null, "Mot de passe invalide ! Il doit contenir au moins 6 caractères, dont une lettre et un chiffre.");
+            return;
+        }
+
+        // 🔹 Validation nom complet
+        if (!fullName.matches("^[A-Za-z ]+$")) {
+            JOptionPane.showMessageDialog(null, "Nom invalide !");
+            return;
+        }
+
+        // 🔹 Validation ville
+        if (!city.matches("^[A-Za-z ]+$")) {
+            JOptionPane.showMessageDialog(null, "Ville invalide !");
+            return;
+        }
+
+        // 🔹 Validation skills (ex: lettres, chiffres, virgules)
+        if (!skills.matches("^[A-Za-z0-9, ]*$")) {
+            JOptionPane.showMessageDialog(null, "Compétences invalides !");
+            return;
+        }
         String sql = "INSERT INTO users(full_name,email,password,city,skills,cv) VALUES (?,?,?,?,?,?)";
         try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, fullName);
@@ -131,6 +161,19 @@ public class Database {
     }
 
     public static boolean loginUser(String email, String password) {
+    	
+    	// 🔹 Validation email
+        if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+            System.out.println("Email invalide !");
+            return false; // Arrête ici si email invalide
+        }
+
+        // 🔹 Validation mot de passe (exemple : min 6 caractères, au moins une lettre et un chiffre)
+        if (!password.matches("^(?=.[A-Za-z])(?=.\\d)[A-Za-z\\d]{6,}$")) {
+            System.out.println("Mot de passe invalide !");
+            return false; // Arrête ici si mot de passe invalide
+        }
+    	
         String sql = "SELECT id FROM users WHERE email=? AND password=?";
         try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, email);
