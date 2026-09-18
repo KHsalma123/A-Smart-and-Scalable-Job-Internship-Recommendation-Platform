@@ -16,7 +16,7 @@ public class RekruteScraper {
         int addedCount = 0;
 
         System.setProperty("webdriver.chrome.driver",
-                "C:\\Users\\SALMA.KH\\Downloads\\chromedriver.exe");
+                "chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(driver, 15);
