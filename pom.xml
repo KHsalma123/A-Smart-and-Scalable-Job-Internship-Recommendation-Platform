@@ -129,9 +129,6 @@
                 <configuration>
                     <source>21</source>
                     <target>21</target>
-                    <fork>true</fork>
-                    <!-- Chemin vers ton JDK 25 -->
-                    <executable>chemin</executable>
                 </configuration>
             </plugin>
 
