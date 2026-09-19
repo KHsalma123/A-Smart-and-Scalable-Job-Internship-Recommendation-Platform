@@ -5,8 +5,8 @@ import java.sql.*;
 public class AdminAuthService {
 
     // Hardcoded admin credentials
-    private static final String ADMIN_EMAIL = "exemple@gmail.com";
-    private static final String ADMIN_PASSWORD = "***";
+    private static final String ADMIN_EMAIL = "admin@gmail.com";
+    private static final String ADMIN_PASSWORD = "admin123";
 
     private Connection conn;
 
