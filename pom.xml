@@ -131,7 +131,7 @@
                     <target>21</target>
                     <fork>true</fork>
                     <!-- Chemin vers ton JDK 25 -->
-                    <executable>C:\Program Files\Java\jdk-25\bin\javac.exe</executable>
+                    <executable>chemin</executable>
                 </configuration>
             </plugin>
 
